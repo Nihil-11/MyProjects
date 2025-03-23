@@ -153,7 +153,7 @@ def convert_temperature_KtoF(event=None):
 
 
 
-def create_window():
+def create_window(): # Function that creates the window
 
     # Visual characteristics
 
