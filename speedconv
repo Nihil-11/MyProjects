@@ -149,7 +149,7 @@ def convert_speed_mileph_to_kmph(event=None):
 
 
 
-def create_window():
+def create_window(): # Function that creates a window
 
 
     # Visual characteristics
@@ -301,12 +301,14 @@ def create_window():
 
 
 
-    # Binding "Enter" button
+    # Binding the "Enter" button
 
     mps_to_kmph_entry.bind("<Return>", convert_speed_mps_to_kmph)
     mps_to_mileph_entry.bind("<Return>", convert_speed_mps_to_mileph)
+
     kmph_to_mps_entry.bind("<Return>", convert_speed_kmph_to_mps)
     kmph_to_mileph_entry.bind("<Return>", convert_speed_kmph_to_mileph)
+
     mileph_to_mps_entry.bind("<Return>", convert_speed_mileph_to_mps)
     mileph_to_kmph_entry.bind("<Return>", convert_speed_mileph_to_kmph)
 
