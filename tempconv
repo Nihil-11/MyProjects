@@ -163,7 +163,7 @@ def create_window(): # Function that creates the window
     root.configure(bg='#808080')  # Background color for the window
 
 
-    # Tabs
+    # Creating the tabs
 
     notebook = ttk.Notebook(root)
     style = ttk.Style()
@@ -303,12 +303,17 @@ def create_window(): # Function that creates the window
 
 
 
+    # Binding the "Enter" button
+
     FtoC_entry.bind("<Return>", convert_temperature_FtoC)
     FtoK_entry.bind("<Return>", convert_temperature_FtoK)
+
     CtoF_entry.bind("<Return>", convert_temperature_CtoF)
     CtoK_entry.bind("<Return>", convert_temperature_CtoK)
+
     KtoC_entry.bind("<Return>", convert_temperature_KtoC)
     KtoF_entry.bind("<Return>", convert_temperature_KtoF)
+
 
 
     root.mainloop()
