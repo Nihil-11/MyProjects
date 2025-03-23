@@ -160,7 +160,7 @@ def create_window(): # Function that creates a window
     root.configure(bg='#808080')  # Background color for the window
 
 
-    # Tabs
+    # Creating the tabs
 
     notebook = ttk.Notebook(root)
     style = ttk.Style()
