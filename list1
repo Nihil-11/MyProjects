@@ -1,0 +1,15 @@
+
+scores = [98, 96, 91, 88, 64]
+
+while len(scores) != 2:
+    for i in scores:
+
+        if i == max(scores):
+            print("First place:", max(scores))
+            scores.remove(max(scores))
+
+            print("Second place:", max(scores))
+            scores.remove(max(scores))
+
+            print("Third place:", max(scores))
+            scores.remove(max(scores))
