@@ -1,11 +1,121 @@
 
 grades = []
 
-while len(grades) < 4:
+# Меню взаимодействия с оценками
 
-    grades.append(int(input("Введите оценку:")))
+def menu():
+    print("")
+    print("\nМеню взаимодействия с оценками:")
+    print("")
+    print("1. Посмотреть текущие оценки")
+    print("2. Добавить оценку")
+    print("3. Изменить оценку")
+    print("4. Удалить оценку")
+    print("5. Посчитать среднюю оценку")
+    print("6. Выход из программы\n")
+    print("")
 
-    if len(grades) == 4:
+
+# Функции взаимодействия с оценками 
+
+def current_grades(): # Посмотреть текущие оценки
+
+    if len(grades) == 0:
+        print("Нет текущих оценок")
+    else:
+        print("Текущие оценки: ", grades)
+
+
+def add(): # Добавить оценку
+
+    if len(grades) < 4:
+
+        try:
+            new_grade = int(input("Введите новую оценку: "))
+            grades.append(new_grade)
+            print("Текущие оценки: ", grades)
+
+        except ValueError:
+            print("Введен неверный формат оценки")
+    else: 
+        print("Нельзя добавить оценку, их максимальное количество - 4")
+
+
+def change_grade(): # Изменить оценку
+
+    if len(grades) > 0:
+        ans = int(input("Какую по счету оценку заменить?: "))
+
+        try:
+
+            if ans == 1:
+                ch_grade = int(input("Заменить оценку на: "))
+                grades[0] = ch_grade
+                print("Текущие оценки: ", grades)
+
+            elif ans == 2:
+                ch_grade = int(input("Заменить оценку на: "))
+                grades[1] = ch_grade
+                print("Текущие оценки: ", grades)
+
+            elif ans == 3:
+                ch_grade = int(input("Заменить оценку на: "))
+                grades[2] = ch_grade
+                print("Текущие оценки: ", grades)
+                
+            elif ans == 4:
+                ch_grade = int(input("Заменить оценку на: "))
+                grades[3] = ch_grade
+                print("Текущие оценки: ", grades)
+
+            else:
+                print("Введите значение от 1 до 4")
+
+        except ValueError:
+            print("Введен неверный формат оценки")
+
+    else:
+        print("Нет текущих оценок")
+
+
+def delete_grade(): # Удалить оценку
+
+    if len(grades) > 0:
+        answ = int(input("Какую по счету оценку удалить?: "))
+
+        try:
+
+            if answ == 1:
+                grades.pop(0)
+                print("Текущие оценки: ", grades)
+
+            if answ == 2:
+                grades.pop(1)
+                print("Текущие оценки: ", grades)
+
+            if answ == 3:
+                grades.pop(2)
+                print("Текущие оценки: ", grades)
+
+            if answ == 4:
+                grades.pop(3)
+                print("Текущие оценки: ", grades)
+
+            else:
+                print("Введите значение от 1 до 4")
+
+
+        except ValueError:
+            print("Введен неверный формат оценки")
+
+    else:
+        print("Нет текущих оценок")
+
+
+def calc_avr(): # Посчитать среднюю оценку
+
+    if len(grades) > 0:
+
         average_grade = sum(grades) / len(grades)
 
         if average_grade % 1 == 0:
@@ -14,6 +124,46 @@ while len(grades) < 4:
 
         else:
             print("Средняя оценка:", average_grade)
+
+    else:
+        print("Нет текущих оценок")
+
+         
+
+# Основной цикл программы
+
+while True:
+
+    menu()
+
+    try:
+        choice = int(input("Выберите действие: "))
+
+        if choice == 1:
+            current_grades()
+
+        elif choice == 2:
+            add()
+
+        elif choice == 3:
+            change_grade()
+
+        elif choice == 4:
+            delete_grade()
+
+        elif choice == 5:
+            calc_avr()
+
+        elif choice == 6:
+            print("Выход из программы.")
+            break
+
+        else:
+            print("Неверный выбор, выберите действие от 1 до 6.")
+
+    except ValueError:
+        print("Неверный формат")
+
 
 
 
