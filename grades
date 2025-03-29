@@ -1,0 +1,22 @@
+
+grades = []
+
+while len(grades) < 4:
+
+    grades.append(int(input("Введите оценку:")))
+
+    if len(grades) == 4:
+        average_grade = sum(grades) / len(grades)
+
+        if average_grade % 1 == 0:
+            average_grade = int(average_grade)
+            print("Средняя оценка:", average_grade)
+
+        else:
+            print("Средняя оценка:", average_grade)
+
+
+
+        
+
+        
